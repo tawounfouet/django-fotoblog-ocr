@@ -1,5 +1,23 @@
-
 {% extends 'base.html' %}
+{% load blog_extras %}
 {% block content %}
-    <p>Vous êtes connecté !</p>
+<h2>Votre flux</h2>
+<div class="grid-container">
+    {% for instance in blogs_and_photos %}
+    {% if instance|model_type == 'Blog' %}
+        {% include| 'blog/partials/blog_snippet.html' with blog=instance %}
+    {% elif instance|model_type == 'Photo' %}
+    <div class="post">
+        <img src="{{ instance.image.url }}">
+        <p>{{ instance.caption }}</p>
+        <p>
+            <strong>Prise par {% get_poster_display instance.uploader %}<strong>
+        </p>
+        <p>{{ instance.date_created }}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
 {% endblock content %}
+
+

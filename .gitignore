@@ -1,0 +1,14 @@
+.env/
+ENV
+
+# database file
+#db.sqlite3
+
+# pychace files
+__pycache__/
+
+# git files
+.git/
+
+# python files
+.idea
