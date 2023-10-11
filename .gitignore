@@ -4,11 +4,11 @@ ENV
 # database file
 #db.sqlite3
 
-# pychace files
+# pychace files - fichiers temporaires générés par python
 __pycache__/
 
 # git files
 .git/
 
-# python files
+# python files - fichier généré par l'éditeur pycharm
 .idea
